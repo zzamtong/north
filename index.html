@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>멸공</title>
+        <link rel="stylesheet" href="./assets/style.css" />
+    </head>
+    <body>
+        <div id="screenSizeWarning" class="screen-size-warning hidden">
+            <div class="warning-content">
+                <p>최소 900x900 픽셀의 화면(뷰포트)이 필요합니다.</p>
+                <p>더 큰 화면에서 플레이해주세요.</p>
+                <p class="current-size">현재 뷰포트 크기: <span id="currentResolution"></span></p>
+            </div>
+        </div>
+        <div id="loading" class="loading-screen">
+            <div class="loading-content">
+                <div class="loader"></div>
+                <p>로딩 중...</p>
+            </div>
+        </div>
+
+        <div id="disclaimerScreen" class="disclaimer-screen">
+            <div class="disclaimer-content">
+                <h2>⚠️ 주의</h2>
+                <p>본 게임에 등장하는 모든 요소는 허구이며</p>
+                <p>실제 인물, 단체, 사건과는 무관합니다.</p>
+                <p>사용된 모든 이미지는 저작권자의 허가를 받았습니다.</p>
+                <button id="disclaimerBtn" class="disclaimer-btn">확인</button>
+            </div>
+        </div>
+
+        <div id="menuScreen" class="menu-screen hidden">
+            <div class="menu-content">
+                <h1 class="menu-title">멸공(滅共)</h1>
+                <div class="menu-buttons">
+                    <div class="difficulty-selector">
+                        <p class="difficulty-label">난이도 설정</p>
+                        <div class="difficulty-buttons">
+                            <button id="easyBtn" class="difficulty-btn">미군 도움 받기(쉬움)</button>
+                            <button id="normalBtn" class="difficulty-btn active">보통</button>
+                            <button id="hardBtn" class="difficulty-btn">어려움</button>
+                        </div>
+                    </div>
+                    <button id="startBtn" class="menu-btn">게임 시작</button>
+                    <button id="muteBtn" class="menu-btn secondary">사운드 켬</button>
+                </div>
+                <div class="menu-info">
+                    <p>북한군 및 중국군, 소련군 등의 공산권 세력을 물리치고 자유 민주주의 대한민국을 보위하십시오. </p>
+                    <p>W, A, S, D 및 방향키로 움직이고, 마우스 클릭 또는 스페이스바로 실탄을 발사하십시오.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-wrapper">
+            <div class="game-container">
+                <canvas id="gameCanvas" width="800" height="800"></canvas>
+            </div>
+        </div>
+
+        <script type="module" src="./js/main.js"></script>
+    </body>
+</html>
