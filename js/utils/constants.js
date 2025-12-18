@@ -60,7 +60,7 @@ export const COIN_CONFIG = {
 export const UI_CONFIG = {
     HEART_SIZE: 25,
     HEART_SPACING: 10,
-    HEART_MARGIN: 15,
+    HEART_MARGIN: 30,
     SCORE_FONT: '20px Arial',
     SCORE_COLOR: '#ffffff',
     ARROW_LENGTH: 30,

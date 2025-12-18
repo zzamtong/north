@@ -57,7 +57,8 @@ export class Game {
             gameover: { path: './assets/sounds/background_gameover.mp3', isMusic: true },
             button_click: { path: './assets/sounds/effect_button_click.mp3', isMusic: false },
             hit: { path: './assets/sounds/effect_hit.mp3', isMusic: false },
-            shot: { path: './assets/sounds/effect_shot.mp3', isMusic: false }
+            shot: { path: './assets/sounds/effect_shot.mp3', isMusic: false },
+            death: { path: './assets/sounds/effect_death.mp3', isMusic: false },
         })
 
         await this.assetManager.loadAll()
@@ -180,8 +181,9 @@ export class Game {
                 if (this.physics.checkCircleCollision(bullet, monster)) {
                     bullet.deactivate()
                     monster.deactivate()
-                    this.score += 5 // 몬스터 처치 점수
+                    this.score += 5
 
+                    this.soundManager.playSound('death')
                     this.spawnManager.createExplosion(monster.position.x, monster.position.y, '#ff6b6b', 12)
                     break
                 }
@@ -225,16 +227,13 @@ export class Game {
             )
         }
 
-        if (false) {
-            // 필요시 true로 변경
-            this.renderer.drawText(
-                `FPS: ${this.currentFps}`,
-                10,
-                GAME_CONFIG.CANVAS_HEIGHT - 30,
-                '14px monospace',
-                '#4ecdc4'
-            )
-        }
+        this.renderer.drawText(
+            `FPS: ${this.currentFps}`,
+            10,
+            GAME_CONFIG.CANVAS_HEIGHT - 30,
+            '14px monospace',
+            '#4ecdc4'
+        )
     }
 
     handleResize() {

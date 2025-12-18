@@ -67,7 +67,7 @@ export class Player {
             direction.normalize()
             this.velocity = direction.multiply(this.speed)
         } else {
-            this.velocity.multiply(0.8) // 감속
+            this.velocity.multiply(0.8) 
         }
     }
 

@@ -74,23 +74,23 @@ export class Physics {
     }
 
     getRandomWallSpawnPosition() {
-        const wall = Math.floor(Math.random() * 4) // 0: top, 1: right, 2: bottom, 3: left
+        const wall = Math.floor(Math.random() * 4)
         let position, targetDirection
 
         switch (wall) {
-            case 0: // Top
+            case 0:
                 position = new Vector2D(Math.random() * this.gameWidth, -20)
                 targetDirection = new Vector2D((Math.random() - 0.5) * 0.8, 1)
                 break
-            case 1: // Right
+            case 1:
                 position = new Vector2D(this.gameWidth + 20, Math.random() * this.gameHeight)
                 targetDirection = new Vector2D(-1, (Math.random() - 0.5) * 0.8)
                 break
-            case 2: // Bottom
+            case 2:
                 position = new Vector2D(Math.random() * this.gameWidth, this.gameHeight + 20)
                 targetDirection = new Vector2D((Math.random() - 0.5) * 0.8, -1)
                 break
-            case 3: // Left
+            case 3:
                 position = new Vector2D(-20, Math.random() * this.gameHeight)
                 targetDirection = new Vector2D(1, (Math.random() - 0.5) * 0.8)
                 break
