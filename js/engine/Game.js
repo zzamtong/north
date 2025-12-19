@@ -59,6 +59,7 @@ export class Game {
             hit: { path: './assets/sounds/effect_hit.mp3', isMusic: false },
             shot: { path: './assets/sounds/effect_shot.mp3', isMusic: false },
             death: { path: './assets/sounds/effect_death.mp3', isMusic: false },
+            coin: { path: './assets/sounds/effect_coin.mp3', isMusic: false },
         })
 
         await this.assetManager.loadAll()
@@ -196,6 +197,7 @@ export class Game {
             if (this.physics.checkCircleCollision(this.player, coin)) {
                 this.score += coin.collect()
 
+                this.soundManager.playSound('coin')
                 this.spawnManager.createExplosion(coin.position.x, coin.position.y, '#ffd700', 8)
             }
         }

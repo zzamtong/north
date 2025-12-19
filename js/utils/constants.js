@@ -1,6 +1,6 @@
 export const GAME_CONFIG = {
-    CANVAS_WIDTH: 800,
-    CANVAS_HEIGHT: 800,
+    CANVAS_WIDTH: 600,
+    CANVAS_HEIGHT: 600,
     FPS: 60,
     BACKGROUND_COLOR: '#1a1a2e',
     DIFFICULTY: 'normal',

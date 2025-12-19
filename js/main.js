@@ -11,8 +11,8 @@ class GameApp {
         this.screenSizeWarning = null
         this.isGameStarted = false
         this.audioInitialized = false
-        this.minWidth = 900
-        this.minHeight = 900
+        this.minWidth = 600
+        this.minHeight = 600
     }
 
     async init() {
